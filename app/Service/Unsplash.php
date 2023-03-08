@@ -37,8 +37,7 @@ class Unsplash
         return $this->client->get($url, [
             'per_page' => 12,
             ...$params
-        ])
-            ->object();
+        ])->object();
     }
 
     public function download($url): string

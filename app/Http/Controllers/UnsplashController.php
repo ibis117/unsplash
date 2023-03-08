@@ -13,8 +13,7 @@ class UnsplashController extends Controller
     {
         $title = $request->get('title', 'furniture');
         $color = $request->get('color', null);
-        $page = $request->get('page', 1);
-
+            $page = $request->get('page', 1);
         $data = $unsplash->search('search/photos', [
             'query' => $title,
             'color' => $color,

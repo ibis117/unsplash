@@ -4,18 +4,18 @@
             <TextInput
                 id="name"
                 type="text"
-                class="mt-1 block w-full col-span-4"
+                class="mt-1 block w-full col-span-12 md:col-span-4"
                 v-model="query"
                 required
                 autofocus
                 placeholder="Enter keywords to search"
             />
             <select v-model="selectedColor"
-                    class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm col-span-4">
+                    class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm col-span-12 md:col-span-4">
                 <option value="">Select Color</option>
                 <option v-for="color in props.colors" :value="color" v-text="color"></option>
             </select>
-            <div class="col-span-2">
+            <div class="col-span-12 md:col-span-2">
                 <PrimaryButton>Search</PrimaryButton>
             </div>
         </form>
@@ -28,13 +28,13 @@
             <div class="border border-indigo-600 flex p-2  w-[150px] h-[100px] ml-4">
                 <img :src="selectedImage.urls.regular" class="inset-0 w-full h-full object-cover object-center">
             </div>
-            <div>
-                <PrimaryButton type="button" class="mx-2" @click="selectedImage = null">Clear</PrimaryButton>
-                <PrimaryButton type="button" @click="download">Download</PrimaryButton>
+            <div class="flex space-x-2 ml-2">
+                <PrimaryButton type="button"  @click="selectedImage = null">Clear</PrimaryButton>
+                <PrimaryButton type="button"  @click="download">Download</PrimaryButton>
             </div>
         </div>
 
-        <div class="grid grid-cols-4 gap-4 mx-4">
+        <div class="grid  grid-cols-1 md:grid-cols-4 gap-4 mx-4">
             <div class="flex relative" v-for="(image,index) in props.data.results" :key="index">
                 <img :src="image.urls.regular" :alt="image.alt_description"
                      class="absolute inset-0 w-full h-full object-cover object-center">
