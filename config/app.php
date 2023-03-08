@@ -212,4 +212,9 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
+    /**
+     * Unsplash Client Id
+     */
+
+    'unsplash_client_id' => env('UNSPLASH_CLIENT_ID')
 ];
